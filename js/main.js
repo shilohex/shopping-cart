@@ -1,22 +1,23 @@
-let items = document.querySelectorAll('.case11')
+let items = document.querySelectorAll('.case12')
   
-items.forEach(item =>{
-  const price= parseFloat(item.querySelector('.price').innerHTML.slice(1))
-  const inc = item.querySelector('.inc')
-  const dec = item.querySelector('.dec')
-  const total = item.querySelector('.total')
-  const qty =item.querySelector('.qty')
-  let quantity = parseFloat(item.querySelector('.qty').innerHTML)
+items.forEach(case12 =>{
+  const price= parseFloat(case12.querySelector('.price').innerHTML)
+  const inc = case12.querySelector('.inc')
+  const dec = case12.querySelector('.dec')
+  const total = case12.querySelector('.total')
+  const qty =case12.querySelector('.qty')
+  let quantity = parseInt(case12.querySelector('.qty').innerHTML)
 
   inc.addEventListener("click",()=>{
    quantity++
    console.log(quantity);
    console.log(price);
-   quantity.innerHTML = quantity
+   qty.innerHTML = quantity
     total.innerHTML=`$${price*quantity}`
   })
+  dec.addEventListener("click",()=>{
+  total.innerHTML = `$${price*quantity}`
 })
 
-dec.addEventListener("click",()=>{
-  total.innerHTML = `$${price*quantity}`
+
 })
