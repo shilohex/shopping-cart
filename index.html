@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Checkout</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
@@ -56,15 +56,14 @@
         </div>
 
         <div class="case12">
-          <p>$50.0</p>
+          <p class="price">$ <span id="price1"> 50 </span></p>
 
           <div>
-            <button>+</button>
-            <span>0</span>
-            <button>-</button>
+            <button onclick=add(1) class="inc">+</button>
+            <span id="qty1" class="qty">1</span>
+            <button onclick=sub(1) class="dec">-</button>
           </div>
-
-          <p>$50.0</p>
+          <p id="total1" class="total"></p>
         </div>
       </div>
     </section>
@@ -76,8 +75,8 @@
     </section>
 
     <section>
-      <div class="case2">
-        <div class="case13">
+      <div class="case1">
+        <div class="case11">
           <img src="./res/tomandjerry2.jpg" alt="" />
           <p>Tom and Jerry run case</p>
           <div>
@@ -85,21 +84,22 @@
           </div>
         </div>
 
-        <div class="case14">
-          <p>$35.0</p>
+        <div class="case12">
+          <p class="price">$ <span id="price1"> 35 </span></p>
+
           <div>
-            <button>+</button>
-            <span>0</span>
-            <button>-</button>
+            <button onclick=add(2) class="inc">+</button>
+            <span id="qyt1" class="qyt">1</span>
+            <button onclick=sub(2) class="dec">-</button>
           </div>
-          <p>$35.0</p>
+          <p id="total1" class="total"></p>
         </div>
       </div>
     </section>
 
     <section>
-      <div class="line3">
-        <hr class="edit3" />
+      <div class="line2">
+        <hr class="edit2" />
       </div>
     </section>
 
@@ -151,26 +151,34 @@
       </div>
     </section>
 
-    
-
     <section>
       <div class="lastblock">
-        <div class="move">
-          <img src="./res/facebookimg2.png" alt="">
-        </div>
+        <div class="lastblock-text">
           <div>
-        <p>Term |</p>
-       </div>
-        <div>
-          <p>Refund policy |</p>
+            <p>Term |</p>
+          </div>
+          <div>
+            <p>Refund policy |</p>
+          </div>
+          <div>
+            <p>Contact</p>
+          </div>
         </div>
-        <div>
-          <p>Contact</p>
+
+        <div class="lastblock-imgs">
+          <div class="move">
+            <img src="./res/facebookimg2.png" alt="" />
+          </div>
+          <div class="move">
+            <img src="./res/instagramlogo.png" alt="" />
+          </div>
+          <div class="move">
+            <img id="size" src="./res/twiter2.png" alt="" />
+          </div>
         </div>
+        <p>Powered by BYTEFURY</p>
       </div>
-     
     </section>
-    
 
     <script src="./js/main.js"></script>
   </body>
