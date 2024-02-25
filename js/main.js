@@ -25,3 +25,19 @@ items.forEach(case12 =>{
 
 
 })
+
+// function calculatetotal() {
+//   let subtotal =document.querySelector('.Subtotal')
+//   let shipping =documet.querySelector('.subtotal2')
+//   let tax =document.querySelector('.subtotal3')
+//   let grandtotal =document.querySelector('.parant')
+//   let sub=0
+//   items.forEach(item => {
+//       const total =item.querySelector('.total')
+//       sub+=parseFloat(total.innerHTML)
+//   }) 
+//   subtotal.innerHTML = `$${sub}`
+//   grandtotal.innerHTML = `$${sub+ parseFloat(tax.innerHTML)}`
+// }
+
+
