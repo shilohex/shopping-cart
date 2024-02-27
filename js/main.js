@@ -24,7 +24,7 @@ items.forEach(case12 =>{
      total.innerHTML=`$${price*quantity}`
 })
   heartButton.addEventListener("click",()=>{
-    heartButton.style.color = (heartButton.style.color == red)?white:red;
+    heartButton.style.color = (heartButton.style.color == "red")?"white":"red";
 })
 
 })
