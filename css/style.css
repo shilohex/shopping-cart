@@ -162,6 +162,13 @@ body{
     padding-left: 20px;
       
 }
+.heart{
+    cursor: pointer;
+    font-size: 20px;
+}
+.heart.clicked{
+    color: red;
+}
 
 /* second line */
 .line2{
@@ -241,7 +248,7 @@ hr{
 
  /* checkout design */
  .checkout{
-    border: 1px black solid;
+    /* border: 1px black solid; */
     background-color: rgb(50, 49, 49);
     margin-top: 7vh;
     display: flex;
@@ -251,19 +258,22 @@ hr{
     width: 200px;
     margin: 0px auto;
     margin-top: 5vh;
-    
-
  }
+
  .checkout p{
     color: aliceblue;
  }
-
+ 
+ .checkout:hover{
+    background-color:rgb(131, 131, 188) ;
+    cursor: pointer;
+}
 
 
  /* lastpage  */
  .lastblock{
     align-items: end; 
-    border: 1px black solid;
+    /* border: 1px black solid; */
     background-color: rgb(50, 49, 49);
     height: 130px;
     margin-top: 7vh;

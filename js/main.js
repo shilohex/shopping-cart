@@ -23,21 +23,33 @@ items.forEach(case12 =>{
      total.innerHTML=`$${price*quantity}`
 })
 
+function toggleHeart() {
+  const heartButton = document.querySelector('.heart');
+  heartButton.classList.toggle('clicked');
+}
 
 })
 
-// function calculatetotal() {
-//   let subtotal =document.querySelector('.Subtotal')
-//   let shipping =documet.querySelector('.subtotal2')
-//   let tax =document.querySelector('.subtotal3')
-//   let grandtotal =document.querySelector('.parant')
-//   let sub=0
-//   items.forEach(item => {
-//       const total =item.querySelector('.total')
-//       sub+=parseFloat(total.innerHTML)
-//   }) 
-//   subtotal.innerHTML = `$${sub}`
-//   grandtotal.innerHTML = `$${sub+ parseFloat(tax.innerHTML)}`
-// }
+function calculateTotal() {
+  // Extract values from HTML elements
+  const subtotal = parseFloat(document.querySelector('.subtotal-value').innerText.slice(1));
+  const shipping = parseFloat(document.querySelector('.subtotal2 .subtotal-value').innerText.slice(1));
+  const tax = parseFloat(document.querySelector('.subtotal3 .subtotal-value').innerText.slice(1));
+
+  // Calculate total
+  const total = subtotal + shipping + tax;
+
+  // Update the Total value in the HTML
+ document.querySelector('.lastsub .subtotal-value').innerText = `$${total}`;
+
+
+ // Call the function when the page loads
+ document.addEventListener('DOMContentLoaded', calculateTotal);
+}
+
+// Call the function when the page loads or when an item is added to the cart
+calculateTotal();
+
+
 
 
