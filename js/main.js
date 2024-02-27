@@ -4,6 +4,7 @@ items.forEach(case12 =>{
   const price= parseFloat(case12.querySelector('.price').innerHTML)
   const inc = case12.querySelector('.inc')
   const dec = case12.querySelector('.dec')
+  const heartButton = document.querySelector('.heart');
   const total = case12.querySelector('.total')
   let qty =case12.querySelector('.qty')
   let quantity = parseInt(qty.textContent)
@@ -22,13 +23,17 @@ items.forEach(case12 =>{
     qty.innerHTML = quantity
      total.innerHTML=`$${price*quantity}`
 })
-
-function toggleHeart() {
-  const heartButton = document.querySelector('.heart');
-  heartButton.classList.toggle('clicked');
-}
+  heartButton.addEventListener("click",()=>{
+    heartButton.style.color = (heartButton.style.color == red)?white:red;
+})
 
 })
+//your function was within the loop thats why you were having trouble accessing it 
+// also that approach would only work for the first like button.
+// function toggleHeart() {
+  // const heartButton = document.querySelector('.heart');
+//   heartButton.classList.toggle('clicked');
+// }
 
 function calculateTotal() {
   // Extract values from HTML elements
