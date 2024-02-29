@@ -156,18 +156,20 @@ body{
 }
 
 /* heart design */
-.case11 div{
+/* .case11 div{
     font-size: 30px;
     width: 50px;
     padding-left: 20px;
       
+} */
+.like img{
+    width: 50%;
 }
-.heart{
-    cursor: pointer;
-    font-size: 20px;
-}
-.heart.clicked{
-    color: red;
+.like{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 7%;
 }
 
 /* second line */

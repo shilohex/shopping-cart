@@ -1,12 +1,13 @@
 let items = document.querySelectorAll('.case1')
   
-items.forEach(case12 =>{
-  const price= parseFloat(case12.querySelector('.price').innerHTML)
-  const inc = case12.querySelector('.inc')
-  const dec = case12.querySelector('.dec')
-  const heartButton = document.querySelector('.heart');
-  const total = case12.querySelector('.total')
-  let qty =case12.querySelector('.qty')
+items.forEach(case1 =>{
+  const price= parseFloat(case1.querySelector('.price').innerHTML)
+  const inc = case1.querySelector('.inc')
+  const dec = case1.querySelector('.dec')
+  const heartButton = case1.querySelector('.heart');
+  const like=case1.querySelector('.like')
+  const total = case1.querySelector('.total')
+  let qty =case1.querySelector('.qty')
   let quantity = parseInt(qty.textContent)
 
   inc.addEventListener("click",()=>{
@@ -14,47 +15,67 @@ items.forEach(case12 =>{
    console.log(quantity);
    console.log(price);
    qty.innerHTML = quantity
-    total.innerHTML=`$${price*quantity}`
+    total.innerHTML=`${price*quantity}`
+    calculateTotal()
   })
+
   dec.addEventListener("click",()=>{
     quantity--
     console.log(quantity);
     console.log(price);
     qty.innerHTML = quantity
-     total.innerHTML=`$${price*quantity}`
+     total.innerHTML=`${price*quantity}`
+     calculateTotal()
+  })
+ 
+
+like.addEventListener("click",()=>{
+   if (heartButton.getAttribute('src') == "./res/heart-regular.svg") {
+    heartButton.setAttribute('src' , './res/heart-solid.svg');
+     }  else{
+      heartButton.setAttribute('src', './res/heart-regular.svg') 
+     }
+  
 })
-  heartButton.addEventListener("click",()=>{
-    heartButton.style.color = (heartButton.style.color == "red")?"white":"red";
-})
 
 })
-//your function was within the loop thats why you were having trouble accessing it 
-// also that approach would only work for the first like button.
-// function toggleHeart() {
-  // const heartButton = document.querySelector('.heart');
-//   heartButton.classList.toggle('clicked');
-// }
 
-function calculateTotal() {
-  // Extract values from HTML elements
-  const subtotal = parseFloat(document.querySelector('.subtotal-value').innerText.slice(1));
-  const shipping = parseFloat(document.querySelector('.subtotal2 .subtotal-value').innerText.slice(1));
-  const tax = parseFloat(document.querySelector('.subtotal3 .subtotal-value').innerText.slice(1));
+ // Function to calculate and update the total
+ function calculateTotal() {
+  let carttotals=0
+  let taxtotals=0
+  items.forEach(case1 =>{
+    const total = case1.querySelector('.total')
+    carttotals+= parseFloat(total.innerText)
+  })
+  taxtotals = carttotals*5/100
+  
+  const shipping = parseFloat(document.getElementById("shipping").innerText);
+  
+  const total = carttotals + taxtotals + shipping;
 
-  // Calculate total
-  const total = subtotal + shipping + tax;
-
-  // Update the Total value in the HTML
- document.querySelector('.lastsub .subtotal-value').innerText = `$${total}`;
-
-
- // Call the function when the page loads
- document.addEventListener('DOMContentLoaded', calculateTotal);
+  document.getElementById("subtotal").innerText = `$${carttotals.toFixed(2)}`;
+  document.getElementById("tax").innerText = `$${taxtotals.toFixed(2)}`;
+  document.getElementById("total").innerText = `$${total.toFixed(2)}`;
 }
 
-// Call the function when the page loads or when an item is added to the cart
-calculateTotal();
+// Call the function when the page loads
+document.addEventListener('DOMContentLoaded', calculateTotal);
 
+// Example: Add new items and recalculate total
+// You can use this logic when new items are added
+// function addNewItem(price) {
+//   // Update subtotal
+//   const currentSubtotal = parseFloat(document.getElementById("subtotal").innerText.slice(1));
+//   const newSubtotal = currentSubtotal + price;
+//   document.getElementById("subtotal").innerText = `$${newSubtotal.toFixed(2)}`;
+
+//   // Recalculate total
+//   calculateTotal();
+// }
+
+// Example: Add a new item with a price of $20
+// addNewItem(20);
 
 
 

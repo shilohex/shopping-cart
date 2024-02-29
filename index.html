@@ -50,9 +50,10 @@
         <div class="case11">
           <img src="./res/phonecase3.jpg" alt="" />
           <p>Tom and Jerry weird cover</p>
-          <div>
-            <button type="submit" class="heart">♡</button>
-          </div>
+          
+          <div class="like">
+          <img class="heart" src="./res/heart-regular.svg" alt="">
+         </div>
         </div>
 
         <div class="case12">
@@ -60,10 +61,10 @@
 
           <div>
             <button type="submit" class="inc">+</button>
-            <span id="qty1" class="qty">1</span>
+            <span  class="qty">1</span>
             <button type="submit" class="dec">-</button>
           </div>
-          <p id="total1" class="total"></p>
+          <p>$<span class="total">50</span></p>
         </div>
       </div>
     </section>
@@ -79,8 +80,8 @@
         <div class="case11">
           <img src="./res/tomandjerry2.jpg" alt="" />
           <p>Tom and Jerry run case</p>
-          <div>
-            <button type="button" class="heart">♡</button>
+          <div class="like">
+          <img class="heart" src="./res/heart-regular.svg" alt="">
           </div>
         </div>
 
@@ -92,7 +93,7 @@
             <span id="qty1" class="qty">1</span>
             <button type="submit" class="dec">-</button>
           </div>
-          <p id="total1" class="total"></p>
+          <p id="total1">$<span class="total">35</span></p>
         </div>
       </div>
     </section>
@@ -109,7 +110,7 @@
           <p>Subtotal</p>
         </div>
         <div>
-          <p class="subtotal-value" >$85</p>
+          <p class="subtotal-value" id="subtotal">$85</p>
         </div>
       </div>
     
@@ -118,7 +119,7 @@
           <p>Shipping</p>
         </div>
         <div>
-          <p class="subtotal-value"> $10</p>
+          <p class="subtotal-value" > $<span id="shipping">10</span></p>
         </div>
       </div>
     
@@ -127,7 +128,7 @@
           <p>Tax</p>
         </div>
         <div>
-          <p class="subtotal-value">$5</p>
+          <p class="subtotal-value" id="tax">$5</p>
         </div>
       </div>
     
@@ -137,7 +138,7 @@
             <p>Total</p>
           </div>
           <div>
-            <p class="subtotal-value"> $100</p>
+            <p class="subtotal-value" id="total"> $100</p>
           </div>
         </div>
       </div>
